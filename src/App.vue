@@ -1,19 +1,16 @@
 <template>
-  <component class="component" :is="currentTabComponent" />
-  <div class="tabs">
-  </div>
+  <router-view class="component"/>
+  <nav class="nav">
+    <router-link class="nav__item" :to="{ name: 'Home' }">Home</router-link>
+    <router-link class="nav__item" :to="{ name: 'TodoApp' }">Todo App</router-link>
+  </nav>
 </template>
 
 <script>
-import Home from './components/home.vue';
-import VueTodo from './components/vue-todo.vue';
 export default {
   name: 'App',
-  components: { Home, VueTodo },
   data() {
     return {
-      currentTab: 'Home',
-      tabs: ['Home', 'Vue Todo', 'Oscarfaeh', 'Kontakt'],
     };
   },
   computed: {
@@ -24,7 +21,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 *,
 *:after,
 *:before {
@@ -38,13 +35,30 @@ body {
 #app {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   min-height: 100vh;
-  background-color: #ff5858;
-  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
 }
 
 .component {
   width: 100%;
+  flex: 4 0 0;
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: stretch;
+  flex: 0 1 100px;
+}
+
+.nav__item {
+  width: 25%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 0;
+
 }
 </style>

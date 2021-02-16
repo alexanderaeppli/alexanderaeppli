@@ -15,5 +15,8 @@ export default {
 
 <style lang="scss">
 .header {
+  height: 100%;
+  background-color: #ff5858;
+  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
 }
 </style>
