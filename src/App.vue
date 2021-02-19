@@ -1,7 +1,16 @@
 <template>
   <div class="app__inner" :style="{ backgroundPosition: currentBackgroundPosition }">
-    <router-view class="component" @emitBackgroundPosition="setBackgoundPositon" />
-
+    <div class="component">
+    <router-view v-slot="{ Component }">
+      <transition name="fade">
+        <component
+          :is="Component"
+          class="component__inner"
+          @emitBackgroundPosition="setBackgoundPositon"
+        />
+      </transition>
+    </router-view>
+    </div>
     <nav class="nav">
       <router-link class="nav__item" :to="{ name: 'Home' }">Home</router-link>
       <router-link class="nav__item" :to="{ name: 'TodoApp' }">Todo App</router-link>
@@ -53,12 +62,19 @@ body {
     rgba(128, 208, 199, 1) 100%
   );
   background-size: 400% 400%;
-  transition: background-position .5s ease-in-out;
+  transition: background-position 0.5s ease-in-out;
 }
 
 .component {
   width: 100%;
   flex: 4 0 0;
+  position: relative;
+
+  &__inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .nav {
@@ -76,5 +92,15 @@ body {
     border: none;
     padding: 0;
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
