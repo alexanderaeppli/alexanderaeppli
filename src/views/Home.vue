@@ -8,15 +8,16 @@
 export default {
   props: {
     heading: String,
-    backgroundColor: String
-  }
+    backgroundColor: String,
+  },
+  mounted() {
+    this.$emit('emitBackgroundPosition', '0 0 ');
+  },
 };
 </script>
 
 <style lang="scss">
 .header {
   height: 100%;
-  background-color: #ff5858;
-  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
 }
 </style>
