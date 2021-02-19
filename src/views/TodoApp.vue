@@ -1,7 +1,7 @@
 <template>
   <div class="todo-page">
     <h2>Vue Todo App</h2>
-    <todo/>
+    <todo />
   </div>
 </template>
 
@@ -10,15 +10,8 @@ import todo from '../../todo/todo';
 export default {
   components: { todo },
   emits: ['emitBackgroundPosition'],
-  props: {
-    heading: String,
-    backgroundColor: String,
-  },
   mounted() {
-    this.$emit('emitBackgroundPosition', '100% 100%');
-  }
+    this.$emit('emitBackgroundPosition', '25% 25%');
+  },
 };
 </script>
-
-<style lang="scss">
-</style>

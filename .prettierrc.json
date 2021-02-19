@@ -16,6 +16,6 @@
   "trailingComma": "es5",
   "useTabs": false,
   "vueIndentScriptAndStyle": false,
-  "filepath": "/home/alexander/webprojects/Vue-Todo/src/components/TodoField.vue",
+  "filepath": "./src/main.js",
   "parser": "vue"
 }

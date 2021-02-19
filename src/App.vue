@@ -5,6 +5,8 @@
     <nav class="nav">
       <router-link class="nav__item" :to="{ name: 'Home' }">Home</router-link>
       <router-link class="nav__item" :to="{ name: 'TodoApp' }">Todo App</router-link>
+      <router-link class="nav__item" :to="{ name: 'Oscarfaeh' }">Oscarfäh</router-link>
+      <router-link class="nav__item" :to="{ name: 'Contact' }">Kontakt</router-link>
     </nav>
   </div>
 </template>
@@ -40,11 +42,18 @@ body {
   min-height: 100vh;
   width: 100%;
   display: flex;
-  flex-flow: column wrap;
-  background-image: linear-gradient(135deg, #ff5858 0%, #f09819  25%, #80D0C7 75%, #0093E9 100%);
-  //background-image: linear-gradient(135deg,#0093E9 0%, #80D0C7 100%);
+  flex-flow: row wrap;
+  background: rgb(240, 152, 25);
+  background: linear-gradient(
+    135deg,
+    rgba(240, 152, 25, 1) 0%,
+    rgba(255, 88, 88, 1) 25%,
+    rgb(168, 94, 207) 50%,
+    rgba(0, 147, 233, 1) 75%,
+    rgba(128, 208, 199, 1) 100%
+  );
   background-size: 400% 400%;
-  transition: background-position 1s ease-in-out;
+  transition: background-position .5s ease-in-out;
 }
 
 .component {
@@ -54,18 +63,18 @@ body {
 
 .nav {
   display: flex;
-  width: 100%;
+  flex-direction: column;
   justify-content: stretch;
   flex: 0 1 100px;
-}
 
-.nav__item {
-  width: 25%;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  padding: 0;
+  &__item {
+    height: 25%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 0;
+  }
 }
 </style>
