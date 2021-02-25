@@ -25,7 +25,7 @@ export default {
     return {
       newTodoField: '',
       newTodoDate: null,
-      todoKey: 0,
+      todoKey: 3, // for demonstation purposes there are 3 initial todo items
       listVisible: true,
     };
   },

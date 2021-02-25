@@ -149,7 +149,7 @@ export default {
       if (this.date === null) {
         this.selectedDay = '';
       }
-    }
+    },
   },
   mounted() {
     // Set current Month / Year
@@ -201,7 +201,7 @@ export default {
   background-color: var.$color_primary--shading;
   z-index: 1;
   color: white;
-  box-shadow: 0px 4px 4px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
   margin-left: 20px;
   font-weight: 600;
   width: 100%;

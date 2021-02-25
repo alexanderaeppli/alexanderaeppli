@@ -1,8 +1,14 @@
 <template>
-  <div class="home card">
-    <div class="header">
+  <div class="home">
+    <div class="home__content card">
       <h1 class="page_title">Alexander Aeppli</h1>
-      <p></p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+        voluptate velit esse cillum dolore e  u fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
     </div>
   </div>
 </template>
@@ -22,10 +28,4 @@ export default {
 <style lang="scss">
 @use '../variables' as var;
 
-.home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 500px;
-}
 </style>

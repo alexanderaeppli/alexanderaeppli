@@ -1,5 +1,5 @@
 <template>
-  <div id='todo'>
+  <div id="todo">
     <todo-form @todo-sent="addTodo"></todo-form>
     <transition-group v-if="todos.length > 0" tag="ul" name="list" class="todo-list">
       <todo-item
@@ -20,7 +20,11 @@ export default {
   components: { TodoForm, TodoItem },
   data() {
     return {
-      todos: [],
+      todos: [
+        { content: 'Wash dishes', date: null, key: 0 },
+        { content: 'Check mailbox', date: null, key: 1 },
+        { content: 'Learn Vue', date: new Date(), key: 2 },
+      ],
       draggingItem: false,
     };
   },
@@ -41,10 +45,6 @@ export default {
 @use 'sass:color';
 @use '../src/variables' as var;
 
-body {
-  font-family: 'Rubik', sans-serif;
-}
-
 *,
 ::after,
 ::before {
@@ -53,12 +53,10 @@ body {
 
 #todo {
   width: 100%;
-  max-width: 600px;
-  margin: 60px auto 0;
   background-color: var.$color_background;
   border-radius: 5px;
   padding: 15px;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
 
   @media (max-width: 500px) {
     margin-top: 10px;
@@ -69,7 +67,6 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  background-color: var.$color_background;
   margin: 0;
   padding: 0;
   margin-top: 40px;

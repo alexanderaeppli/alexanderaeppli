@@ -5,7 +5,7 @@
         ><i class="fas icon fa-home"></i
       ></router-link>
       <router-link class="nav__item" :to="{ name: 'TodoApp' }"
-        ><i class="fas icon fa-list"></i
+        ><i class="fab icon fa-vuejs"></i
       ></router-link>
       <router-link class="nav__item" :to="{ name: 'Oscarfaeh' }">
         <i class="fab icon fa-wordpress-simple"></i>
@@ -17,7 +17,7 @@
   </nav>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use '../variables' as var;
 
 .nav {
@@ -31,12 +31,31 @@
   right: 20px;
   min-height: 100%;
   overflow-y: auto;
+  z-index: 10;
+
+  @media (max-width: 800px) {
+    top: unset;
+    bottom: 15px;
+    right: 0;
+    width: 100%;
+    height: unset;
+    min-height: unset;
+    padding: 0 20px;
+    align-items: center;
+  }
 
   &__inner {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100px;
+
+
+    @media (max-width: 800px) {
+      flex-direction: row;
+      width: unset;
+      padding: unset;
+    }
   }
 
   &__item {
@@ -45,6 +64,7 @@
     align-items: center;
     border: none;
     color: var.$color_text;
+    width: 70px;
 
     .icon {
       width: 100%;
