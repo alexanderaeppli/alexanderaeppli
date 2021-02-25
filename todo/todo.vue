@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss">
 @use 'sass:color';
-@use './variables.scss' as var;
+@use '../src/variables' as var;
 
 body {
   font-family: 'Rubik', sans-serif;

@@ -1,8 +1,10 @@
 @use 'sass:color';
 
+$color_text: #222222;
 $color_primary: #9862fc;
 $color_primary--shading: color.scale($color_primary, $lightness: 20%);
 $color_grey: #555555;
 $color_grey--shading: color.scale($color_grey, $lightness: 20%);
 $color_background: #3e3b41;
 $color_otherMonth: #969696;
+

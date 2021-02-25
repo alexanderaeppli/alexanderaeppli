@@ -17,7 +17,4 @@ export default {
 </script>
 
 <style lang="scss">
-.header {
-  height: 100%;
-}
 </style>

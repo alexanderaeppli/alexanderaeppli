@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss">
 @use 'sass:color';
-@use '../variables.scss' as var;
+@use '../../src/variables' as var;
 
 .todo-item {
   display: flex;

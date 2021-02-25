@@ -1,6 +1,9 @@
 <template>
-  <div class="header">
-    <h2>Alexander Aeppli</h2>
+  <div class="home card">
+    <div class="header">
+      <h1 class="page_title">Alexander Aeppli</h1>
+      <p></p>
+    </div>
   </div>
 </template>
 
@@ -17,7 +20,12 @@ export default {
 </script>
 
 <style lang="scss">
-.header {
-  height: 100%;
+@use '../variables' as var;
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
 }
 </style>

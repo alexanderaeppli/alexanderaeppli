@@ -82,7 +82,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use '../variables.scss' as var;
+@use '../../src/variables' as var;
 
 .dropdown {
   position: relative;
