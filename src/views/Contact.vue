@@ -4,7 +4,6 @@
     <ul class="contact">
       <li><strong>Alexander Aeppli</strong></li>
       <li>c/o Andreas Aeppli</li>
-      <li>schlagzeugunterricht.ch</li>
       <li>Schule für Schlaginstrumente</li>
       <li>Rudolfstrasse 19</li>
       <li>8400 Winterthur</li>

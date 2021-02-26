@@ -7,7 +7,7 @@
       Visitenkarte dienen und einige meiner Fähigkeiten präsentierten.
     </p>
     <template v-slot:media>
-      <img class="thumbnail" src="../assets/of_screenshot.png" alt="" />
+      <img class="thumbnail" src="../assets/typewriter_low.jpg" alt="Alexander Aeppli" />
     </template>
   </subpage>
 </template>
