@@ -13,7 +13,7 @@
       Seite verloren.
     </p>
     <p>
-      Die App wurde mit Vue 3 umsesetzt. Ich keine weiteren externen Bibliotheken verwendet.
+      Die App wurde mit Vue 3 umgesetzt. Ich keine weiteren externen Bibliotheken verwendet.
     </p>
     <template v-slot:media>
       <todo />

@@ -3,7 +3,7 @@
     <h1>Hallo, ich bin Alexander Aeppli.</h1>
     <p>
       Als begeisterter Web und Frontend Entwickler bin ich ständig auf der Suche nach neuen
-      techniken und möglichkeinen mein Repetoir auszubauen. Diese Seite soll als meine digitale
+      Techniken und Möglichkeiten, mein Repertoire auszubauen. Diese Seite soll als meine digitale
       Visitenkarte dienen und einige meiner Fähigkeiten präsentierten.
     </p>
     <template v-slot:media>
