@@ -1,36 +1,32 @@
 <template>
-  <div class="header">
-    <div class="card todo-page__content">
-      <h1>Oscarfaeh Webseite</h1>
-      <p>
-        Um praktie Erfahrung mit Vue zu sammeln, habe ich eine Todo-Web-App entwickelt. Eine
-        Todo-Liste bietet sich gut als Probeprojekt an, da sie klare Mindestanforderungen hat – das
-        Erstellen und Entfernen von Elementen –, darüber hinaus aber schier unbegrenzt erweitert
-        werden kann. Mein Fokus lag beim Datepicker, welcher mit Hilfe der JavaScript-Date-API eine
-        nach Wochentagen sortierte Monatsansicht generiert.
-      </p>
-      <p>
-        Zur Zeit besteht nur ein Front-End. Erfasste Einträge gehen also bei einem erneuten Laden
-        der Seite verloren.
-      </p>
-      <p>
-        Die App wurde mit Vue 3. Ich keine weiteren externen Bibliotheken verwendet.
-      </p>
-    </div>
-    <img class="thumbnail" src="../assets/of_screenshot.png" alt="">
-  </div>
+  <subpage>
+    <h1>Oscarfaeh Webseite</h1>
+    <p>
+      Diese Kundenwebseite habe ich als Entwickler bei der Mosaix AG umgesetzt. Das Design stammt
+      von Diana von Ow. Ich war für die Entwicklung zuständig.
+    </p>
+    <p>
+      Eine der Anforderungen der Webseite war, das der Kunde inhaltliche Anpassungen selbstständig
+      machen kann. Inhalte werden über WordPress und den Pagebuilder Elementor erfasst. Hierfür habe
+      ich ein Theme und diversere Elementor Widgets entwickelt.
+    </p>
+    <p>
+      Das Dienstleistungs-Megamenu stelle eine der grössten Herausforderungen dar. Hier werden die
+      Widgets der Unterseiten per AJAX geladen und als Overlay angezeigt.
+    </p>
+    <a class="button button--right" href="https://www.oscarfaeh.ch" target="_blank">zum Produkt</a>
+    <template v-slot:media>
+      <img class="thumbnail" src="../assets/of_screenshot-min.png" alt="" />
+    </template>
+  </subpage>
 </template>
 
 <script>
+import subpage from '../templates/subpage';
 export default {
-  props: {
-    heading: String,
-    backgroundColor: String,
-  },
+  components: { subpage },
   mounted() {
     this.$emit('emitBackgroundPosition', '50% 50%');
   },
 };
 </script>
-
-<style lang="scss"></style>

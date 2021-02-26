@@ -42,47 +42,5 @@ export default {
 </script>
 
 <style lang="scss">
-@use 'sass:color';
-@use '../src/variables' as var;
 
-*,
-::after,
-::before {
-  box-sizing: border-box;
-}
-
-#todo {
-  width: 100%;
-  background-color: var.$color_background;
-  border-radius: 5px;
-  padding: 15px;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
-
-  @media (max-width: 500px) {
-    margin-top: 10px;
-  }
-}
-
-.todo-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  margin-top: 40px;
-}
-
-.list-enter-active,
-.list-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.list-enter-from,
-.list-leave-to {
-  opacity: 0;
-}
-
-.list-move {
-  transition: transform 0.8s ease;
-}
 </style>

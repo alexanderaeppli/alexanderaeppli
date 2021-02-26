@@ -1,0 +1,343 @@
+@use 'sass:color';
+@use 'variables' as var;
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+#todo {
+  width: 100%;
+  flex: 1 0 450px;
+  background-color: var.$color_background;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+
+  @media (max-width: 500px) {
+    margin-top: 10px;
+  }
+}
+
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.list-enter-active,
+.list-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+}
+
+.list-move {
+  transition: transform 0.8s ease;
+}
+
+.button {
+  padding: 8px 20px 10px;
+  margin-top: 2px;
+  border-radius: 5px;
+  border: none;
+  position: relative;
+  top: -2px;
+  background-color: var.$color_primary--shading;
+  z-index: 1;
+  color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+  margin-left: 20px;
+  font-weight: 600;
+  width: 100%;
+  white-space: nowrap;
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 2px;
+    left: 0;
+    border-radius: 5px;
+    z-index: -1;
+    background-color: var.$color_primary;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: color.scale(var.$color_primary--shading, $lightness: 20%);
+
+    &::after {
+      background-color: color.scale(var.$color_primary, $lightness: 20%);
+    }
+  }
+
+  &--secondary {
+    @extend .button;
+    margin-left: unset;
+    background-color: var.$color_grey--shading;
+
+    &::after {
+      background-color: var.$color_grey;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: color.scale(var.$color_grey--shading, $lightness: 20%);
+
+      &::after {
+        background-color: color.scale(var.$color_grey, $lightness: 20%);
+      }
+    }
+  }
+
+  &--right {
+    align-self: flex-end;
+    width: auto;
+    float: right;
+  }
+}
+
+/*===== Todo form =====*/
+
+.todo-form {
+  width: 100%;
+  display: flex;
+  color: white;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+
+  &__field-label {
+    width: 100%;
+    margin-right: 10px;
+    position: relative;
+
+    &:focus .todo-form__label-text {
+      display: none;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: color.scale(var.$color_background, $lightness: -20%);
+    box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  &__label-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+  }
+
+  &__datepicker {
+    width: 100%;
+    max-width: 150px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: color.scale(var.$color_background, $lightness: -20%);
+    box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+
+    @media (max-width: 500px) {
+      max-width: unset;
+      margin-top: 15px;
+    }
+  }
+
+  &__date {
+    height: 20px;
+    background-color: grey;
+    position: relative;
+  }
+
+  &__button {
+    width: auto;
+    margin-left: 10px;
+
+    @media (max-width: 500px) {
+      margin-left: unset;
+      margin-top: 15px;
+    }
+  }
+}
+
+/*===== Todo item =====*/
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  flex-grow: 0;
+  position: relative;
+  color: white;
+  border-top: 2px solid color.scale(var.$color_background, $lightness: -20%);
+  border-bottom: 2px solid transparent;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+
+  &:first-of-type {
+    border-top: none;
+  }
+
+  &__title {
+    @media (max-width: 500px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__attr {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 500px) {
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &__date {
+    margin-right: 10px;
+  }
+
+  .button {
+    width: auto;
+  }
+}
+
+/*====== Date Picker ======*/
+.datepicker {
+  position: relative;
+
+  &__picker {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 5;
+    background-color: var.$color_background;
+    max-width: 300px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  &__header,
+  &__footer {
+    padding: 15px;
+  }
+
+  &__header {
+    display: flex;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.calendar {
+  top: 100%;
+  padding: 0 15px;
+
+  &__inner {
+    display: grid;
+    grid-template: repeat(6, 1fr) / repeat(7, 1fr);
+    width: 100%;
+    height: 300px / 7 * 6;
+    justify-items: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+  }
+
+  &__date {
+    user-select: none;
+    height: 2em;
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+
+    &--today {
+      border: var.$color_grey 3px solid;
+    }
+
+    &--selected {
+      border: var.$color_primary 3px solid;
+    }
+
+    &--otherMonth {
+      color: #969696;
+    }
+
+    &--title {
+      font-weight: 600;
+      color: #ffffff;
+    }
+  }
+}
+
+/*===== Calendar dropdown =====*/
+.dropdown {
+  position: relative;
+  cursor: pointer;
+  color: white;
+  user-select: none;
+
+  &--opague {
+    opacity: 0;
+  }
+
+  &__list {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    background-color: var.$color_background;
+    z-index: 1;
+    height: 150px;
+    overflow-y: scroll;
+    border-radius: 5px;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__list-inner {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 0;
+  }
+
+  &__item {
+    padding: 5px 15px;
+    height: 30px;
+  }
+
+  &__selected {
+    padding: 5px 15px;
+    height: 30px;
+    display: block;
+  }
+}
