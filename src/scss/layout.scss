@@ -33,11 +33,11 @@ h1 {
   background: rgb(240, 152, 25);
   background: linear-gradient(
     135deg,
-    rgb(240, 151, 25) 0%,
-    rgb(255, 88, 88) 25%,
-    rgb(168, 94, 207) 50%,
-    rgb(0, 147, 233) 75%,
-    rgb(128, 208, 199) 100%
+    #f09719 0%,
+    #ff5858 25%,
+    #a85ecf 50%,
+    #0093e9 75%,
+    #80d0c7 100%
   );
   background-size: 400% 400%;
   transition: background-position 0.5s ease-in-out;
